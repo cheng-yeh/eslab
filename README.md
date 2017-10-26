@@ -16,5 +16,5 @@ The goal of this assignment is to establish a BLE service with C, python, or Nod
 
 
 
-##I2C
+## I2C
 
