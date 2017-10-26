@@ -1,6 +1,6 @@
 # eslab
-*This is the repository for the assignments for Embedded System in 2017 fall.  
-*Two assignments are in this repository, one is in folder BLE while the other in I2C.
+* This is the repository for the assignments for Embedded System in 2017 fall.  
+* Two assignments are in this repository, one is in folder BLE while the other in I2C.
 
 # File Description 
 ## BLE
