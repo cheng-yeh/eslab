@@ -52,12 +52,12 @@ This function will generate a signal to interrupt the rpi, which will send out a
 		printf("Received %d\n", temp);
 	}
 	else printf("Error!");
-}
-```
-```python
-def my_callback(channel):
- print(bus.read_byte(address))
-```
+ }
+ ```
+ ```python
+ def my_callback(channel):
+  print(bus.read_byte(address))
+ ```
 Both will send out a read request to the Arduino.
 
 ### adxl
@@ -83,7 +83,7 @@ Both will send out a read request to the Arduino.
 	}
 	return;
    }
-```
+   ```
      This function compute the remaining time, and wait until this period ends.
  * adxl345.py
   * We modify the example in [adxl345-python](https://github.com/pimoroni/adxl345-python) to periodically read data.
