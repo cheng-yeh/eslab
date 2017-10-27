@@ -24,4 +24,6 @@ This folder contains the needed component and directory of [bleno](https://githu
 
 
 ## I2C
-
+## Description
+The requirement of this assignment is to modify the reference code of 
+## File Description
