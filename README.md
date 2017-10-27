@@ -18,7 +18,7 @@ This folder contains the needed component and directory of [noble](https://githu
 ### peripheral
 This folder contains the needed component and directory of [bleno](https://github.com/sandeepmistry/bleno).
 * peripheral_acc/peripheral.js
-  * When the BLE device is powered on, the peripheral will advertising itself and set up the service, waiting for connection. If ```onReadRequest``` of ```AccCharacteristic```is triggered, the acceleration will be read out, converted to readable format, and sent back to the request device.
+  * When the BLE device is powered on, the peripheral will advertising itself and set up the service, waiting for connection. If ```onReadRequest``` of ```AccCharacteristic```is triggered, the acceleration will be read out, converted to readable format, and sent back to the request device.
 
 
 
