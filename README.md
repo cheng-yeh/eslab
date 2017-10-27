@@ -65,8 +65,7 @@ Both will send out a read request to the Arduino.
    * We use the adxl-345 example in [Sunfounder_SuperKit_C_code_for_RaspberryPi](https://github.com/sunfounder/Sunfounder_SuperKit_C_code_for_RaspberryPi) to read the acceleration.
    * The reading period is manipulated strictly by ```MicrosecondsNoSleep```.
    ```C
-   void MicrosecondsNoSleep(int delay_us)
-{
+   void MicrosecondsNoSleep(int delay_us){
 	long int start_time;
 	long int time_difference;
 	struct timespec gettime_now;
@@ -83,7 +82,7 @@ Both will send out a read request to the Arduino.
 			break;
 	}
 	return;
-}
+   }
 ```
 This function compute the remaining time, and wait until this period ends.
  * adxl345.py
