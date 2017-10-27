@@ -25,10 +25,10 @@ This folder contains the needed component and directory of [bleno](https://githu
 
 # I2C
 ## Description
-There are two part of this assignment, one is to modify the reference code of the communication program for RPi and Arduino using the asynchronous IO techniques, the other is to read the 3D accelerator value periodically in 200 Hz from an ADXL345 module to RPi using C and python, respectively.
+There are two parts of this assignment, one is to modify the reference code of the communication program for RPi and Arduino using the asynchronous IO techniques, the other is to read the 3D accelerator value periodically in 200 Hz from an ADXL345 module to RPi using C and python, respectively.
 
 ## File Description
 ### async 
- * The modified communicaiton program let a user to send an integer whenever from the RPi side or the Arduino side via I2C. 
+ * The modified communicaiton program let a user to send an integer whenever from the RPi side or the Arduino side via I2C.
 
 ### adxl
