@@ -84,6 +84,8 @@ Both will send out a read request to the Arduino.
 	return;
    }
 ```
-This function compute the remaining time, and wait until this period ends.
+     This function compute the remaining time, and wait until this period ends.
  * adxl345.py
-  * 
+  * We modify the example in [adxl345-python](https://github.com/pimoroni/adxl345-python) to periodically read data.
+  
+  
