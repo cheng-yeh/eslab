@@ -10,7 +10,7 @@ The goal of this assignment is to establish a BLE service with C, python, or Nod
 * This folder contains the needed component and directory of noble.
 #### central_acc
 * central.js
-> The central will first scan for BLE service. Once find any, it will stop scan and discover all the characteristics of the service. If there's no characteristics missed, ... ..
+> The central will first scan for BLE service. Once find any, it will stop scan and connect to it. After check the uid of the service and characteristics(the uid of both ave been recorded in this file in advance, in order not to connect to wrong services). If there's no characteristics missed, the central will 
 
 
 
