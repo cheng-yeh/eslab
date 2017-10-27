@@ -29,6 +29,62 @@ There are two parts of this assignment, one is to modify the reference code of t
 
 ## File Description
 ### async 
- * The modified communicaiton program let a user to send an integer whenever from the RPi side or the Arduino side via I2C.
- * 
+The modified communicaiton program let a user to send an integer whenever from the RPi side or the Arduino side via I2C to the other. There are four wires needed - three for I2C, one for interrupt to rpi(connected from Arduino UNO Digital 8 to RPi3 GPIO 17). 
+#### i2c_arduino_to_rpi.ino (Arduino side)
+ * When there is a Serail input from a user, ```serialEvent()``` will be called as an ISR and call ```ISRR()```.
+ ```arduino
+ void ISRR(){
+  digitalWrite(8, LOW);
+  Serial.println("LOW");
+  delayMicroseconds(400);
+  digitalWrite(8, HIGH);
+}
+```
+This function will generate a signal to interrupt the rpi, which will send out a read requset and trigger ``` Wire.onRequest(sendData)```, which complete the send process.
+
+#### RPi side
+ * There are two version of this part, one in ``` for_C```, one in ```for_python```.
+ * When GPIO 17 is triggered in the above procedure, both the ISR in the two version will be execute.
+ ``` C
+ void my_ISR(void){
+	if (read(file, (void*) buf, 1) == 1) {
+		temp = (int) buf[0];
+		printf("Received %d\n", temp);
+	}
+	else printf("Error!");
+}
+```
+```python
+def my_callback(channel):
+ print(bus.read_byte(address))
+```
+Both will send out a read request to the Arduino.
+
 ### adxl
+ * adxl345.c
+   * We use the adxl-345 example in [Sunfounder_SuperKit_C_code_for_RaspberryPi](https://github.com/sunfounder/Sunfounder_SuperKit_C_code_for_RaspberryPi) to read the acceleration.
+   * The reading period is manipulated strictly by ```MicrosecondsNoSleep```.
+   ```C
+   void MicrosecondsNoSleep(int delay_us)
+{
+	long int start_time;
+	long int time_difference;
+	struct timespec gettime_now;
+
+	clock_gettime(CLOCK_REALTIME, &gettime_now);
+	start_time = gettime_now.tv_nsec;
+	while (1)
+	{
+		clock_gettime(CLOCK_REALTIME, &gettime_now);
+		time_difference = gettime_now.tv_nsec - start_time;
+		if (time_difference < 0)
+			time_difference += 1000000000;				
+		if (time_difference > (delay_us * 1000))
+			break;
+	}
+	return;
+}
+```
+This function compute the remaining time, and wait until this period ends.
+ * adxl345.py
+  * 
