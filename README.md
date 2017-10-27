@@ -7,7 +7,7 @@
 The goal of this assignment is to establish a BLE service with C, python, or Node.js and transfer data between the central and the peripheral.  We choose to use Node.js because there are two powerful libraries: [bleno](https://github.com/sandeepmistry/bleno) and [noble](https://github.com/sandeepmistry/noble), which can act as peripheral and central respectively.  We set up the service to transfer the real time acceleration read from adxl-345(a 3-axis accelerometer) on the peripheral to the central.
 * The adxl345 and the peripheral communicate via I2C.
 * The adxl345 is manipulated by [adxl345-sensor](https://github.com/skylarstein/adxl345-sensor).
-* The acceleration given by the adxl345 is in float type, but the read/write between the peripheral and the central seems to be UInt16BE only.  Also, the negative numbers have trouble when transfering. We sole the above issues by converting the original data into a set of two numbers - one represents positive or not, one represents the value - and multiply the value by 100 and cast it into UInt16BE without lost of accuracy.
+* The acceleration given by the adxl345 is in float type, but the read/write between the peripheral and the central seems to be UInt16BE only.  Also, the negative numbers have trouble when transfering. We solve the above issues by converting the original data into a set of two numbers - one represents positive or not(1 or 0), one represents the value. Multiply the value by 100 and cast it into UInt16BE without lost of accuracy.
 
 ## File Description
 ### central
